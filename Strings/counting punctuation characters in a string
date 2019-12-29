@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main()
+{
+  char str[]="Good Morning! Mr. James Potter. Had your breakfast?";
+  int count=0;
+  int l=strlen(str);
+  for(int i=0;i<l;i++)
+  {
+      if(str[i]=='!' || str[i]==',' || str[i]==';' || str[i]=='?' || str[i]=='.' || str[i]=='-' || str[i]=='\"' || str[i]=='\'' || str[i]==':')
+        count++;
+  }
+  cout<<count;
+  return 0;   
+}
+
+
+
+/////result///
+4
