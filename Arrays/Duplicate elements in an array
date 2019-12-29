@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+  int arr[]={1, 2, 3, 4, 2, 7, 8, 8, 3};                               //initialisation of array
+  int length=sizeof(arr)/sizeof(arr[0]);                               //length of the array
+  cout<<"The given array is:\n";
+  for(int i=0;i<length;i++)
+    cout<<arr[i]<<" ";
+  cout<<"\nThe duplicate elements are:\n";
+  for(int i=0;i<length;i++)
+  {
+      for(int j=i+1;j<length;j++)
+      {                                                                 //ek ek element pakar ke uske aage se mila rahe hain 
+          if(arr[j]==arr[i])                                            //agar same ho gaya toh duplicate hai
+            cout<<arr[j]<<" ";
+      }
+  }
+  return 0;   
+}
+
+
+
+/////Result/////
+The given array is:                                                                                                                           
+1 2 3 4 2 7 8 8 3                                                                                                                             
+The duplicate elements are:                                                                                                                   
+2 3 8
