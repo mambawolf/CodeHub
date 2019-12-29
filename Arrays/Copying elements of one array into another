@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+  int arr1[]={1,2,3,4,5,6,7};                           //initialising the array
+  int length=sizeof(arr1)/sizeof(arr1[0]);              //calculating the length of the array1
+  int arr2[length];                                     //initialising array2 with the same length as array1
+  for(int i=0;i<length;i++)
+    {
+        arr2[i]=arr1[i];                               //arr1 ke har element ko copy karr rahe hain arr2 me
+    }
+  for(int i=0;i<length;i++)                            
+    {
+        cout<<arr1[i]<<" ";                           //printing arr1 elements
+    }
+  cout<<"\n";
+  for(int i=0;i<length;i++)
+    {
+        cout<<arr2[i]<<" ";                           //printing arr2 elements
+    }
+  return 0;   
+}
+
+
+
+
+//////result/////
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7
