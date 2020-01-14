@@ -1,0 +1,84 @@
+Problem
+Given a time in 12-hour AM/PM format, convert it to military (24-hour) time.
+
+Note: Midnight is 12:00:00AM on a 12-hour clock, and 00:00:00 on a 24-hour clock. Noon is 12:00:00PM on a 12-hour clock, and 12:00:00 on a 24-hour clock.
+
+Function Description
+
+Complete the timeConversion function in the editor below. It should return a new string representing the input time in 24 hour format.
+
+timeConversion has the following parameter(s):
+
+s: a string representing time in 12 hour format
+
+Sample Input 0
+
+07:05:45PM
+
+Sample Output 0
+
+19:05:45
+
+
+solution
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    char s[10];
+    scanf("%[^\n]s",s);
+    int i=0;
+    int l=strlen(s);    
+        for(i=0;i<l;i++)
+        {
+            if(i==8 && s[i]=='A')
+            {
+                if(s[0]=='1' && s[1]=='2')
+                {
+                    cout<<"00";
+                    for(int x=2;x<l-2;x++)
+                        cout<<s[x];
+                }
+                else    
+                {   
+                    for(int j=0;j<l-2;j++)
+                    {
+                        cout<<s[j];
+                    }
+                }    
+            }
+            else if(i==8 && s[i]=='P')
+            {
+            
+                char ss[2];
+                for(int u=0;u<2;u++)
+                {
+                    ss[u]=s[u];
+                }
+                int a=atoi(ss);
+                a=a+12;
+                int r=(a%100);
+                if(r==24)
+                {   
+                    cout<<"12";
+                    for(int k=2;k<l-2;k++)
+                    {
+                        cout<<s[k];
+                    }
+                }
+                else
+                {
+                    cout<<r;
+                    for(int k=2;k<l-2;k++)
+                    {
+                        cout<<s[k];
+                    }
+                }        
+            }
+        }  
+
+    return 0;
+}      
